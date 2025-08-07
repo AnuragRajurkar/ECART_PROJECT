@@ -21,13 +21,13 @@ await connectCloudinary();
 
 
 //allowd multiple origins
-const allowedOrigins = ['http://localhost:5173','http://localhost:5174']
+const allowedOrigins = ['http://localhost:5173','http://localhost:5174','https://ecart-project-delta.vercel.app']
 
 app.post('/stripe', express.raw({type:'application/json'}), stripeWebhooks)
 
 
 const corsOptions = {
-  origin: 'http://localhost:5174', // MUST match exactly
+  origin: ['http://localhost:5174','https://ecart-project-delta.vercel.app'], // MUST match exactly
   credentials: true,              // Must be true for cookies/auth headers
 };
 
