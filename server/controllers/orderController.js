@@ -137,9 +137,9 @@ export const stripeWebhooks = async (request, response)=>{
     // Handle the event
     switch (event.type) {
         case "checkout.session.completed":{
-            const paymentIntent = event.data.object;
+           /* const paymentIntent = event.data.object;
             const paymentIntentId = paymentIntent.id;
-
+*/
             const session = event.data.object;
 
             /*// Getting Session Metadata
@@ -156,9 +156,9 @@ export const stripeWebhooks = async (request, response)=>{
             break;
         }
         case "checkout.session.expired": {
-            const paymentIntent = event.data.object;
+          /*  const paymentIntent = event.data.object;
             const paymentIntentId = paymentIntent.id;
-
+*/
             const session = event.data.object;
             /*
             // Getting Session Metadata
