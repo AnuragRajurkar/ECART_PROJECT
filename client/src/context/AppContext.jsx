@@ -85,7 +85,7 @@ const fetchUser = async () => {
 
 
     
-    //fetch all products and siplay in product list of seller
+    //fetch all products and diplay in product list of seller
     const fetchProducts = async () => {
        try {
 

@@ -11,7 +11,7 @@ const SellerLogin = () => {
     const [password, setPassword] = useState("");
 
     const onSubmitHandler = async (e) => {
-        //here we will write logic to handle the login form
+        //here we will write logic to handle the login form for seller
         try {
             e.preventDefault();
             //we have to make api for seller login

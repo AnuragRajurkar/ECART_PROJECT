@@ -24,10 +24,12 @@ const AddProduct = () => {
             price,
             offerPrice
         }
-        //This form data will send in an api request
+        //This Using product data we will create form data will send in an api request
         const formData = new FormData();
         formData.append('productData',JSON.stringify(productData))
 
+        //we have to append multiple images also
+        
         for(let i = 0;i <files.length;i++)
         {
             formData.append('images',files[i])

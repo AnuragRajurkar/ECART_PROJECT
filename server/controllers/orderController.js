@@ -6,7 +6,9 @@ import User from "../models/User.js"
 // Place Order COD : /api/order/cod
 export const placeOrderCOD = async (req, res)=>{
     try {
-        const { userId, items, address } = req.body;
+        const {  items, address } = req.body;
+        const userId = req.user;
+
         if(!address || items.length === 0){
             return res.json({success: false, message: "Invalid data"})
         }
@@ -40,8 +42,10 @@ export const placeOrderCOD = async (req, res)=>{
 // Place Order Stripe : /api/order/stripe
 export const placeOrderStripe = async (req, res)=>{
     try {
-        const { userId, items, address } = req.body;
+        const {  items, address } = req.body;
+         const userId = req.user;
         const {origin} = req.headers;
+        //we will get origin from request header
 
         if(!address || items.length === 0){
             return res.json({success: false, message: "Invalid data"})
@@ -88,6 +92,8 @@ export const placeOrderStripe = async (req, res)=>{
             quantity: item.quantity,
         }
      })
+
+     //using that line items and instance we will create a session and using the session we will get url
 
      // create session
      const session = await stripeInstance.checkout.sessions.create({

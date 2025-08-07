@@ -48,6 +48,7 @@ export const register = async (req,res) => {
             maxAge : 7 * 24 * 60 * 60 *1000 //cookie expiration time
         })
 
+        //we are sending response to user 
         return res.json({
                 success : true,
                 user : {

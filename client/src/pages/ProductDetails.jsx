@@ -13,6 +13,7 @@ const ProductDetails = () => {
     const [thumbnail, setThumbnail] = useState(null);
     const [relatedProducts, setRelatedProducts] = useState([]);
 
+    //it is a individual product
     const product = products.find((item) => item._id === id);
 
     
@@ -62,7 +63,7 @@ const ProductDetails = () => {
                                 <img src={i < 4? assets.star_icon : assets.star_dull_icon} className="md:w-4 w-3.5" />
                             
                         ))}
-                        <p className="text-base ml-2">({4})</p>
+                        <p className="text-base ml-2">(4)</p>
                     </div>
 
                     <div className="mt-6">
