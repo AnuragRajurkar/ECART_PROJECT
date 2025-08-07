@@ -87,7 +87,7 @@ export const placeOrderStripe = async (req, res)=>{
                 product_data:{
                     name: item.name,
                 },
-                unit_amount: Math.floor(item.price + item.price * 0.02)  * 100
+                unit_amount: Math.floor((item.price + item.price * 0.02)  * 100)
             },
             quantity: item.quantity,
         }
@@ -131,6 +131,7 @@ export const stripeWebhooks = async (request, response)=>{
         );
     } catch (error) {
         response.status(400).send(`Webhook Error: ${error.message}`)
+        return;
     }
 
     // Handle the event
